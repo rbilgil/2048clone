@@ -8,7 +8,7 @@ var activeNums = [];
 function drawGrid(XbyX) {
 
     context.clearRect(0, 0, canvas.width, canvas.height);
-    
+
     var boxSize = canvas.width / XbyX;
     var x = 0;
     for (var i = 0; i < XbyX; i++) {
@@ -85,10 +85,10 @@ function start() {
             boxY = getRandomCoord();
         } while (filledPositions.indexOf(getBoxNumber(boxX, boxY)) !== -1);
 
-        filledPositions.push(getBoxNumber(boxX, boxY));
+        fillBox(getBoxNumber(boxX, boxY));
 
         var num = new Num(boxX, boxY, 2);
-        activeNums.push(num);
+        activate(num);
     }
 
     draw();
@@ -108,7 +108,13 @@ function getBoxNumber(boxX, boxY) {
 start();
 
 document.onkeydown = function(e) {
-    if (e.keyCode == 40) {
+    if (e.keyCode == 37) {
+        pressLeft();
+    } else if (e.keyCode == 38) {
+        pressUp();
+    } else if (e.keyCode == 39) {
+        pressRight();
+    } else if (e.keyCode == 40) {
         pressDown();
     }
 }
@@ -116,8 +122,79 @@ document.onkeydown = function(e) {
 function pressDown() {
     for (var i = 0; i < activeNums.length; i++) {
         var num = activeNums[i];
-        num.setBoxY(boxCount);
+        moveY(num, boxCount);
         draw();
     }
+}
+
+function pressUp() {
+    for (var i = 0; i < activeNums.length; i++) {
+        var num = activeNums[i];
+        moveY(num, 1);
+        draw();
+    }
+}
+
+function pressLeft() {
+    for (var i = 0; i < activeNums.length; i++) {
+        var num = activeNums[i];
+        moveX(num, 1);
+        draw();
+    }
+}
+
+function pressRight() {
+    for (var i = 0; i < activeNums.length; i++) {
+        var num = activeNums[i];
+        moveX(num, boxCount);
+        draw();
+    }
+}
+
+
+function emptyBox(boxNumber) {
+    filledPositions[filledPositions.indexOf(boxNumber)] = null;
+}
+
+function fillBox(boxNumber) {
+    filledPositions.push(boxNumber);
+}
+
+function activate(num) {
+    activeNums.push(num);
+}
+
+function moveY(num, y) {
+
+    emptyBox(num.boxNumber);
+
+    while (filledPositions.indexOf(getBoxNumber(num.boxX, y)) !== -1) {
+        if (y > num.boxY) {
+            y -= 1;
+        } else if (y < num.boxY) {
+            y += 1;
+        } else {
+            break;
+        }
+    }
+    num.setBoxY(y);
+    fillBox(num.boxNumber);
+}
+
+function moveX(num, x) {
+
+    emptyBox(num.boxNumber);
+
+    while (filledPositions.indexOf(getBoxNumber(x, num.boxY)) !== -1) {
+        if (x > num.boxX) {
+            x -= 1;
+        } else if (x < num.boxX) {
+            x += 1;
+        } else {
+            break;
+        }
+    }
+    num.setBoxX(x);
+    fillBox(num.boxNumber);
 }
 
