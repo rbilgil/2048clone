@@ -6,12 +6,15 @@ var filledPositions = [];
 var activeNums = [];
 
 function drawGrid(XbyX) {
+
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    
     var boxSize = canvas.width / XbyX;
     var x = 0;
     for (var i = 0; i < XbyX; i++) {
         var y = 0;
         for (var j = 0; j < XbyX; j++) {
-            context.clearRect(x, y, boxSize, boxSize);
+            context.rect(x, y, boxSize, boxSize);
             context.stroke();
             y += boxSize;
         }
