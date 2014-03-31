@@ -37,7 +37,7 @@
       <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="146" column="49" selection-start="3253" selection-end="3253" vertical-scroll-proportion="0.5505618" vertical-offset="2626" max-vertical-offset="4120">
+            <state line="204" column="0" selection-start="4460" selection-end="4460" vertical-scroll-proportion="-0.42322096" vertical-offset="4306" max-vertical-offset="4840">
               <folding />
             </state>
           </provider>
@@ -120,6 +120,7 @@
     <property name="FullScreen" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="LayoutCode.rearrangeEntriesJavaScript" value="false" />
   </component>
   <component name="RunManager" selected="JavaScript Debug.2048">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -213,7 +214,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="10" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -240,7 +241,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="146" column="49" selection-start="3253" selection-end="3253" vertical-scroll-proportion="0.5505618" vertical-offset="2626" max-vertical-offset="4120">
+        <state line="204" column="0" selection-start="4460" selection-end="4460" vertical-scroll-proportion="-0.42322096" vertical-offset="4306" max-vertical-offset="4840">
           <folding />
         </state>
       </provider>

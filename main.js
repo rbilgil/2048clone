@@ -44,14 +44,14 @@ function Num(boxX, boxY, value) {
         return boxNum <= boxCount;
     }
 
-    this.setBoxX = function(boxX) {
+    this.setBoxX = function (boxX) {
         if (validateBoxNum(boxX)) {
             $this.boxX = boxX;
             $this.boxNumber = getBoxNumber(boxX, $this.boxY);
         }
     }
 
-    this.setBoxY = function(boxY) {
+    this.setBoxY = function (boxY) {
         if (validateBoxNum(boxY)) {
             $this.boxY = boxY;
             $this.boxNumber = getBoxNumber($this.boxX, boxY);
@@ -65,30 +65,34 @@ function assignNumberToBox(num) {
     var boxX = num.boxX;
     var boxY = num.boxY;
     var boxSize = canvas.width / boxCount;
-    var x = boxSize * ((boxX - 1) + 1/2) - 18;
-    var y = boxSize * ((boxY - 1) + 1/2) + 18;
+    var x = boxSize * ((boxX - 1) + 1 / 2) - 18;
+    var y = boxSize * ((boxY - 1) + 1 / 2) + 18;
 
     context.fillText(num.value, x, y);
 }
 
+function generateNum() {
+    var boxX, boxY;
+
+    do {
+        boxX = getRandomCoord();
+        boxY = getRandomCoord();
+    } while (filledPositions.indexOf(getBoxNumber(boxX, boxY)) !== -1);
+
+    fillBox(getBoxNumber(boxX, boxY));
+
+    var num = new Num(boxX, boxY, 2);
+    activate(num);
+}
+
+function getRandomCoord() {
+    return Math.round(Math.random() * 3 + 1);
+}
+
 function start() {
 
-    function getRandomCoord() {
-        return Math.round(Math.random() * 3 + 1);
-    }
-
     for (var i = 0; i < startingNums; i++) {
-        var boxX, boxY;
-
-        do {
-            boxX = getRandomCoord();
-            boxY = getRandomCoord();
-        } while (filledPositions.indexOf(getBoxNumber(boxX, boxY)) !== -1);
-
-        fillBox(getBoxNumber(boxX, boxY));
-
-        var num = new Num(boxX, boxY, 2);
-        activate(num);
+        generateNum();
     }
 
     draw();
@@ -107,7 +111,8 @@ function getBoxNumber(boxX, boxY) {
 
 start();
 
-document.onkeydown = function(e) {
+document.onkeydown = function (e) {
+    generateNum();
     if (e.keyCode == 37) {
         pressLeft();
     } else if (e.keyCode == 38) {
@@ -153,7 +158,10 @@ function pressRight() {
 
 
 function emptyBox(boxNumber) {
-    filledPositions[filledPositions.indexOf(boxNumber)] = null;
+    var index = filledPositions.indexOf(boxNumber);
+    if (~index) {
+        filledPositions.splice(index, 1);
+    }
 }
 
 function fillBox(boxNumber) {
@@ -169,7 +177,13 @@ function moveY(num, y) {
     emptyBox(num.boxNumber);
 
     while (filledPositions.indexOf(getBoxNumber(num.boxX, y)) !== -1) {
-        if (y > num.boxY) {
+        var collisionNum = getNumberAtPosition(getBoxNumber(num.boxX, y));
+        if (collisionNum.value === num.value) {
+            num.value += collisionNum.value;
+            deactivate(collisionNum);
+            emptyBox(collisionNum.boxNumber);
+            break;
+        } else if (y > num.boxY) {
             y -= 1;
         } else if (y < num.boxY) {
             y += 1;
@@ -181,12 +195,34 @@ function moveY(num, y) {
     fillBox(num.boxNumber);
 }
 
+function getNumberAtPosition(boxNumber) {
+
+    for (var i = 0; i < activeNums.length; i++) {
+        if (activeNums[i].boxNumber === boxNumber) {
+            return activeNums[i];
+        }
+    }
+
+    return -1;
+}
+function deactivate(num) {
+    for (var i = 0; i < activeNums.length; i++) {
+        if (num === activeNums[i]) {
+            activeNums.splice(i, 1);
+        }
+    }
+}
 function moveX(num, x) {
 
     emptyBox(num.boxNumber);
 
-    while (filledPositions.indexOf(getBoxNumber(x, num.boxY)) !== -1) {
-        if (x > num.boxX) {
+    while ( filledPositions.indexOf(getBoxNumber(x, num.boxY)) !== -1 ) {
+        var collisionNum = getNumberAtPosition(getBoxNumber(x, num.boxY));
+        if (collisionNum.value === num.value) {
+            num.value *= collisionNum.value;
+            deactivate(collisionNum);
+            break;
+        } else if (x > num.boxX) {
             x -= 1;
         } else if (x < num.boxX) {
             x += 1;
