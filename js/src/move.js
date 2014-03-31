@@ -26,6 +26,7 @@ function handleCollision(boxNumber, num) {
 function boxHasAnotherNumber(boxNumber, num) {
     return isBoxFull(boxNumber) && boxNumber !== num.boxNumber;
 }
+
 function moveX(num, x) {
 
     var boxNumber;
@@ -67,29 +68,24 @@ function moveY(num, y) {
 }
 
 function pressDown() {
-    for (var i = 0; i < activeNums.length; i++) {
-        var num = activeNums[i];
-        moveY(num, boxCount);
-    }
+    buttonPress(moveY, boxCount);
 }
 
 function pressUp() {
-    for (var i = 0; i < activeNums.length; i++) {
-        var num = activeNums[i];
-        moveY(num, 1);
-    }
+    buttonPress(moveY, 1);
 }
 
 function pressLeft() {
-    for (var i = 0; i < activeNums.length; i++) {
-        var num = activeNums[i];
-        moveX(num, 1);
-    }
+    buttonPress(moveX, 1);
 }
 
 function pressRight() {
+    buttonPress(moveX, boxCount);
+}
+
+function buttonPress(move, distance) {
     for (var i = 0; i < activeNums.length; i++) {
         var num = activeNums[i];
-        moveX(num, boxCount);
+        move(num, distance);
     }
 }
