@@ -11,13 +11,13 @@ start();
 
 document.onkeydown = function (e) {
     if (e.keyCode == 37) {
-        pressLeft();
+        moveLeft();
     } else if (e.keyCode == 38) {
-        pressUp();
+        moveUp();
     } else if (e.keyCode == 39) {
-        pressRight();
+        moveRight();
     } else if (e.keyCode == 40) {
-        pressDown();
+        moveDown();
     }
 
     generateNum();

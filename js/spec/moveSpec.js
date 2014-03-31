@@ -19,95 +19,113 @@ describe("Testing if a box is full", function() {
 
 });
 
+describe("Moving", function() {
 
-describe("moving in the x axis", function() {
+    var nums;
 
-    var num1, num2;
+    beforeEach(function() {
+        nums = [];
+    });
 
-    it("should combine the two numbers when moving right", function() {
-        num1 = new Num(1, 1, 2);
-        num2 = new Num(4, 1, 2);
-        activate(num1);
-        activate(num2);
+    function activateAllNums() {
+        for (var i = 0; i < nums.length; i++) {
+            activate(nums[i]);
+        }
+    }
 
-        moveX(num1, 4);
+    function deactivateAllNums() {
+        for (var i = 0; i < nums.length; i++) {
+            deactivate(nums[i]);
+        }
+    }
 
-        expect(isBoxFull(1)).toBe(false);
-        expect(isBoxFull(4)).toBe(true);
+    it("Should move everything to the very left if clear", function() {
 
-        expect(getNumInBox(4).value).toBe(4);
-        expect(activeNums.length).toBe(1);
+        nums.push(new Num(2, 1, 2));
+        nums.push(new Num(1, 2, 4));
+
+        activateAllNums();
+
+        moveLeft();
+
+        expect(nums[0].boxX).toBe(1);
+        expect(nums[1].boxX).toBe(1);
 
     });
 
+    it("Should not move a Num if there is blockage", function() {
 
-    it("should stop just before if the numbers aren't the same", function() {
-        num1 = new Num(1, 1, 2);
-        num2 = new Num(4, 1, 4);
-        activate(num1);
-        activate(num2);
+        nums.push(new Num(2, 1, 2));
+        nums.push(new Num(1, 1, 4));
 
-        moveX(num1, 4);
-        expect(isBoxFull(1)).toBe(false);
-        expect(isBoxFull(4)).toBe(true);
-        expect(isBoxFull(3)).toBe(true);
+        activateAllNums();
 
-        expect(getNumInBox(4).value).toBe(4);
-        expect(getNumInBox(3).value).toBe(2);
-        expect(activeNums.length).toBe(2);
-    });
+        moveLeft();
 
-    afterEach(function() {
-
-        deactivate(num1);
-        deactivate(num2);
+        expect(nums[0].boxX).toBe(2);
+        expect(nums[1].boxX).toBe(1);
 
     });
 
-});
+    it("Should move a Num up to the far left up to a blockage", function() {
 
-describe("moving in the y axis", function() {
+        //xoox
+        nums.push(new Num(4, 1, 2));
+        nums.push(new Num(1, 1, 4));
 
-    var num1, num2;
+        //oxxo
+        nums.push(new Num(2, 4, 2));
+        nums.push(new Num(3, 4, 4));
 
-    it("should combine the two numbers when moving right", function() {
-        num1 = new Num(2, 3, 4);
-        num2 = new Num(2, 4, 4);
-        activate(num1);
-        activate(num2);
+        //xxox
+        nums.push(new Num(1, 3, 2));
+        nums.push(new Num(2, 3, 4));
+        nums.push(new Num(4, 3, 8));
 
-        moveY(num1, 4);
+        activateAllNums();
 
-        expect(isBoxFull(getBoxNumber(2, 3))).toBe(false);
-        expect(isBoxFull(getBoxNumber(2, 4))).toBe(true);
+        moveLeft();
 
-        expect(getNumInBox(getBoxNumber(2, 4)).value).toBe(8);
-        expect(activeNums.length).toBe(1);
+        //xoox
+        expect(nums[0].boxX).toBe(2);
+        expect(nums[1].boxX).toBe(1);
+
+        //oxxo
+        expect(nums[2].boxX).toBe(1);
+        expect(nums[3].boxX).toBe(2);
+
+        //xxoo
+        expect(nums[4].boxX).toBe(1);
+        expect(nums[5].boxX).toBe(2);
+        expect(nums[6].boxX).toBe(3);
+    });
+
+    it("Should combine two nums that are the same", function() {
+
+        nums.push(new Num(4, 1, 2));
+        nums.push(new Num(1, 1, 2));
+        nums.push(new Num(3, 3, 4));
+        nums.push(new Num(2, 3, 4));
+
+        activateAllNums();
+        moveLeft();
+
+        expect(nums[0].boxX).toBe(1);
+        expect(nums[0].value).toBe(4);
+        expect(nums[2].boxX).toBe(1);
+        expect(nums[2].value).toBe(8);
+
+
+        expect(isBoxFull(4, 1)).toBe(false);
+        expect(isBoxFull(1, 1)).toBe(true);
+        expect(isBoxFull(3, 3)).toBe(false);
+        expect(isBoxFull(2, 3)).toBe(false);
+        expect(isBoxFull(1, 3)).toBe(true);
 
     });
 
-
-    it("should stop just before if the numbers aren't the same", function() {
-        num1 = new Num(1, 2, 4);
-        num2 = new Num(1, 4, 8);
-        activate(num1);
-        activate(num2);
-
-        moveY(num1, 4);
-        expect(isBoxFull(getBoxNumber(1, 2))).toBe(false);
-        expect(isBoxFull(getBoxNumber(1, 3))).toBe(true);
-        expect(isBoxFull(getBoxNumber(1, 4))).toBe(true);
-
-        expect(getNumInBox(getBoxNumber(1, 3)).value).toBe(4);
-        expect(getNumInBox(getBoxNumber(1, 4)).value).toBe(8);
-        expect(activeNums.length).toBe(2);
-    });
-
-    afterEach(function() {
-
-        deactivate(num1);
-        deactivate(num2);
-
+    afterEach( function() {
+        deactivateAllNums();
     });
 
 });
