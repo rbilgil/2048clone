@@ -13,10 +13,14 @@ function isBoxFull(boxNumber) {
 
 function moveX(num, x) {
 
-    while ( filledPositions.indexOf(getBoxNumber(x, num.boxY)) !== -1 ) {
-        var collisionNum = getNumInBox(getBoxNumber(x, num.boxY));
+    var boxNumber = getBoxNumber(x, num.boxY);
+
+    while (isBoxFull(boxNumber) ) {
+
+        var collisionNum = getNumInBox(boxNumber);
+
         if (collisionNum.value === num.value) {
-            num.value *= collisionNum.value;
+            num.value += collisionNum.value;
             deactivate(collisionNum);
             break;
         } else if (x > num.boxX) {
@@ -26,6 +30,7 @@ function moveX(num, x) {
         } else {
             break;
         }
+
     }
 
     num.setBoxX(x);

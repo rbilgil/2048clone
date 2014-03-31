@@ -1,6 +1,5 @@
 var boxCount;
 var activeNums = [];
-var filledPositions = [];
 
 describe("Getting a box number from box coordinates", function() {
 

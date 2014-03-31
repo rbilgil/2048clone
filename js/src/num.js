@@ -52,7 +52,7 @@ function generateNum() {
     do {
         boxX = getRandomCoord();
         boxY = getRandomCoord();
-    } while (filledPositions.indexOf(getBoxNumber(boxX, boxY)) !== -1);
+    } while (isBoxFull(getBoxNumber(boxX, boxY)));
 
     var num = new Num(boxX, boxY, 2);
     activate(num);
