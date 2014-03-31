@@ -23,11 +23,14 @@ function handleCollision(boxNumber, num) {
     }
 }
 
+function boxHasAnotherNumber(boxNumber, num) {
+    return isBoxFull(boxNumber) && boxNumber !== num.boxNumber;
+}
 function moveX(num, x) {
 
     var boxNumber;
 
-    while (isBoxFull(boxNumber = getBoxNumber(x, num.boxY))) {
+    while (boxHasAnotherNumber(boxNumber = getBoxNumber(x, num.boxY), num)) {
 
         if (handleCollision(boxNumber, num)) {
             break;
@@ -47,7 +50,7 @@ function moveY(num, y) {
 
     var boxNumber;
 
-    while (isBoxFull(boxNumber = getBoxNumber(num.boxX, y))) {
+    while (boxHasAnotherNumber(boxNumber = getBoxNumber(num.boxX, y), num)) {
 
         if (handleCollision(boxNumber, num)) {
             break;
