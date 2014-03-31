@@ -10,7 +10,6 @@ function start() {
 start();
 
 document.onkeydown = function (e) {
-    generateNum();
     if (e.keyCode == 37) {
         pressLeft();
     } else if (e.keyCode == 38) {
@@ -20,6 +19,9 @@ document.onkeydown = function (e) {
     } else if (e.keyCode == 40) {
         pressDown();
     }
+
+    generateNum();
+    draw();
 };
 
 
