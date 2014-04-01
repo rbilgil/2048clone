@@ -1,7 +1,14 @@
+/**
+ * Draws a rectangle to cover the canvas
+ */
 function clearGrid() {
     context.clearRect(0, 0, canvas.width, canvas.height);
 }
 
+/**
+ * Draws an X by X square grid for the game
+ * @param XbyX
+ */
 function drawGrid(XbyX) {
     clearGrid();
 
@@ -22,15 +29,27 @@ function drawGrid(XbyX) {
     }
 }
 
+/**
+ * Draws the grid and all game elements on top
+ */
 function draw() {
     drawGrid(boxCount);
     for (var i = 0; i < activeNums.length; i++) {
-        putNumInBox(activeNums[i]);
+        drawNumInBox(activeNums[i]);
     }
 }
 
-function putNumInBox(num) {
+/**
+ * Draws a given Num object inside the relevant box
+ * @param num
+ */
+function drawNumInBox(num) {
     var maxSize, color, offsetX, offsetY;
+
+    /**
+     * Numbers change colour towards red as their value increases
+     * The font size decreases to be able to fit bigger numbers (up to 10000)
+     */
     if (num.value < 10) {
         //single digits
         maxSize = 64;
