@@ -6,19 +6,18 @@ I made this purely as an exercise in vanilla JS.
 
 It has bugs! And I may not have the time to fix them.
 
-**Features**
+### Features
 
   - Adjustable grid size! Need to implement this on front-end
   
   - You can carry on beyond 2048
   
-**To Do**
+### To Do
 
   - Make front-end nicer
   
   
-License
-=======
+### License
 
 MIT License.
 
