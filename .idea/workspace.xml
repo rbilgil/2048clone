@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f82d8bfd-73b5-4862-88d1-3dfcde1ea2dc" name="Default" comment="">
+<<<<<<< Updated upstream
       <change type="DELETED" beforePath="D:\Code\2048clone\grid.js" afterPath="" />
       <change type="DELETED" beforePath="D:\Code\2048clone\main.js" afterPath="" />
       <change type="DELETED" beforePath="D:\Code\2048clone\move.js" afterPath="" />
@@ -10,6 +11,9 @@
       <change type="DELETED" beforePath="D:\Code\2048clone\vars.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/src/grid.js" afterPath="$PROJECT_DIR$/js/src/grid.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/src/move.js" afterPath="$PROJECT_DIR$/js/src/move.js" />
+>>>>>>> Stashed changes
     </list>
     <ignored path="2048clone.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,7 +39,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="27" selection-start="204" selection-end="204" vertical-scroll-proportion="0.0" vertical-offset="200" max-vertical-offset="680">
+            <state line="10" column="27" selection-start="204" selection-end="204" vertical-scroll-proportion="-6.8965516" vertical-offset="0" max-vertical-offset="680">
               <folding />
             </state>
           </provider>
@@ -53,7 +57,11 @@
       <file leaf-file-name="move.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/src/move.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state line="63" column="30" selection-start="1470" selection-end="1470" vertical-scroll-proportion="0.6909789" vertical-offset="900" max-vertical-offset="2140">
+=======
+            <state line="39" column="41" selection-start="901" selection-end="901" vertical-scroll-proportion="0.46589017" vertical-offset="500" max-vertical-offset="1260">
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
@@ -62,7 +70,11 @@
       <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/src/main.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state line="20" column="5" selection-start="369" selection-end="369" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="680">
+=======
+            <state line="20" column="5" selection-start="369" selection-end="369" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
@@ -80,7 +92,11 @@
       <file leaf-file-name="moveSpec.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/spec/moveSpec.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state line="86" column="19" selection-start="1761" selection-end="1761" vertical-scroll-proportion="0.0" vertical-offset="1380" max-vertical-offset="2740">
+=======
+            <state line="112" column="29" selection-start="2377" selection-end="2377" vertical-scroll-proportion="0.0" vertical-offset="1860" max-vertical-offset="2740">
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
@@ -139,8 +155,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="width" value="960" />
-    <option name="height" value="1040" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -235,7 +253,7 @@
     <property name="LayoutCode.rearrangeEntriesJavaScript" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="JavaScript Debug.2048">
+  <component name="RunManager" selected="Karma.Karma">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
       <method />
@@ -298,7 +316,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="960" height="1040" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -307,10 +325,14 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28603104" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+<<<<<<< Updated upstream
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3989011" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39740822" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+>>>>>>> Stashed changes
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32289416" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -336,7 +358,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="22" />
+      <option name="time" value="24" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -410,16 +432,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/js/spec/numSpec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="27" selection-start="204" selection-end="204" vertical-scroll-proportion="0.0" vertical-offset="200" max-vertical-offset="680">
+        <state line="122" column="7" selection-start="2712" selection-end="2712" vertical-scroll-proportion="0.0" vertical-offset="2029" max-vertical-offset="2900">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/spec/numSpec.js">
+    <entry file="file://$PROJECT_DIR$/js/src/num.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="7" selection-start="2712" selection-end="2712" vertical-scroll-proportion="0.0" vertical-offset="2029" max-vertical-offset="2900">
+        <state line="52" column="32" selection-start="1211" selection-end="1211" vertical-scroll-proportion="0.0" vertical-offset="1503" max-vertical-offset="2040">
           <folding />
         </state>
       </provider>
@@ -431,9 +453,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/src/num.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="32" selection-start="1211" selection-end="1211" vertical-scroll-proportion="0.0" vertical-offset="1503" max-vertical-offset="2040">
+        <state line="10" column="27" selection-start="204" selection-end="204" vertical-scroll-proportion="-6.8965516" vertical-offset="0" max-vertical-offset="680">
           <folding />
         </state>
       </provider>
@@ -454,14 +476,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/spec/moveSpec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="19" selection-start="1761" selection-end="1761" vertical-scroll-proportion="0.0" vertical-offset="1380" max-vertical-offset="2740">
+        <state line="112" column="29" selection-start="2377" selection-end="2377" vertical-scroll-proportion="0.0" vertical-offset="1920" max-vertical-offset="2740">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/src/move.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state line="63" column="30" selection-start="1470" selection-end="1470" vertical-scroll-proportion="0.6909789" vertical-offset="900" max-vertical-offset="2140">
+=======
+        <state line="39" column="41" selection-start="901" selection-end="901" vertical-scroll-proportion="0.46589017" vertical-offset="500" max-vertical-offset="1260">
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
