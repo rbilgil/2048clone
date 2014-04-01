@@ -1,3 +1,8 @@
+/**
+ * Checks if a given box contains a number
+ * @param boxNumber
+ * @returns {boolean}
+ */
 function isBoxFull(boxNumber) {
 
     var isFull = false;
@@ -11,6 +16,10 @@ function isBoxFull(boxNumber) {
     return isFull;
 }
 
+/**
+ * Checks if all grid boxes contain numbers
+ * @returns {boolean}
+ */
 function allBoxesFull() {
     for (var i = 1; i < getGridSize(); i++) {
         if (!isBoxFull(i)) {
@@ -21,10 +30,19 @@ function allBoxesFull() {
     return true;
 }
 
+/**
+ * Gets the total number of boxes in the grid
+ * @returns {*}
+ */
 function getGridSize() {
     return getBoxNumber(boxCount, boxCount);
 }
 
+/**
+ * Adds neighbouring numbers together if they are the same value
+ * @param num
+ * @param neighbour
+ */
 function addNeighboursIfSame(num, neighbour) {
 
     if (neighbour.value === num.value) {
@@ -36,6 +54,12 @@ function addNeighboursIfSame(num, neighbour) {
     }
 }
 
+/**
+ * Moves all numbers in the X direction
+ * @param xPos the scanning parameter, should go from left/right
+ * of the grid to the right/left (depending on movement direction)
+ * @param sign
+ */
 function moveX(xPos, sign) {
 
     for (var i = 0; i < activeNums.length; i++) {
@@ -60,6 +84,12 @@ function moveX(xPos, sign) {
     }
 }
 
+/**
+ * Moves all numbers in the Y direction
+ * @param yPos the scanning parameter, should go from the bottom/top
+ * of the grid to the top/bottom (depending on movement direction)
+ * @param sign
+ */
 function moveY(yPos, sign) {
 
     for (var i = 0; i < activeNums.length; i++) {
@@ -84,6 +114,9 @@ function moveY(yPos, sign) {
     }
 }
 
+/**
+ * Moves every number left
+ */
 function moveLeft() {
     for (var xPos = 2; xPos <= boxCount; xPos++) {
         moveX(xPos, -1);
