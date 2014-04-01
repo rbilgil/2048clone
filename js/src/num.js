@@ -49,13 +49,19 @@ function Num(boxX, boxY, value) {
 function generateNum() {
     var boxX, boxY;
 
-    do {
-        boxX = getRandomCoord();
-        boxY = getRandomCoord();
-    } while (isBoxFull(getBoxNumber(boxX, boxY)));
+    if (!allBoxesFull()) {
+        do {
+            boxX = getRandomCoord();
+            boxY = getRandomCoord();
+        } while (isBoxFull(getBoxNumber(boxX, boxY)));
 
-    var num = new Num(boxX, boxY, 2);
-    activate(num);
+        var num = new Num(boxX, boxY, 2);
+        activate(num);
+        draw();
+
+    } else {
+        gameOver();
+    }
 }
 
 /**
