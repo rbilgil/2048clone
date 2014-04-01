@@ -1,12 +1,16 @@
+/**
+ * Starts the game
+ */
 function start() {
-
     for (var i = 0; i < startingNums; i++) {
         generateNum();
     }
-
     draw();
 }
 
+/**
+ * Ends the game
+ */
 function gameOver() {
     game.over = true;
     context.fillStyle = 'rgba(255,255,255, 0.8)';
@@ -22,6 +26,10 @@ function isGameOver() {
 
 start();
 
+/**
+ * Controls movement with left, right up and down keys
+ * @param e
+ */
 document.onkeydown = function (e) {
 
     if (!isGameOver()) {

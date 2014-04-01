@@ -75,8 +75,8 @@ describe("getting a random coordinate", function() {
 
         function coordinateTests() {
             for (var i = 0; i < 10; i++) {
-                expect(getRandomCoord()).toBeLessThan(boxCount + 1);
-                expect(getRandomCoord()).toBeGreaterThan(0);
+                expect(getRandomBoxCoordinate()).toBeLessThan(boxCount + 1);
+                expect(getRandomBoxCoordinate()).toBeGreaterThan(0);
             }
         }
 
